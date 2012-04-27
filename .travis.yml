@@ -2,8 +2,12 @@ language: php
 
 php:
   - 5.3
-  - 5.4
+#  - 5.4
 
 before_script:
-    - curl -s http://getcomposer.org/installer | php
-    - php composer.phar --dev install
+    - ls /usr/share/pear/
+    - export TEST_HOME=$PWD
+    - cd / && patch -p1 < "$TEST_HOME/Tests/phpunit.patch"
+    - cd $TEST_HOME
+#    - curl -s http://getcomposer.org/installer | php
+#    - php composer.phar --dev install

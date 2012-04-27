@@ -1,0 +1,18 @@
+diff --git a/Static.php b/Static.php
+index ffffb29..853ca1f 100644
++++ b/usr/share/pear/PHPUnit/Framework/MockObject/Invocation/Static.php
++++ b/usr/share/pear/PHPUnit/Framework/MockObject/Invocation/Static.php
+@@ -106,11 +106,12 @@ class PHPUnit_Framework_MockObject_Invocation_Static implements PHPUnit_Framewor
+         $this->methodName = $methodName;
+         $this->parameters = $parameters;
+ 
++        /* no cloning, it breaks our tests. This behaviour is already changed in PHPUnit 3.7
+         foreach ($this->parameters as $key => $value) {
+             if (is_object($value)) {
+                 $this->parameters[$key] = $this->cloneObject($value);
+             }
+-        }
++        }*/
+     }
+ 
+     /**
