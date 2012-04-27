@@ -6,6 +6,7 @@ php:
 
 before_script:
     - php -r "echo ini_get('include_path');"
+    - ls -alh "/home/vagrant/.phpenv/versions/5.4.0/share/pyrus/.pear/php"
 #    - ls /usr/share/pear/
 #    - export TEST_HOME=$PWD
 #    - cd / && patch -p1 < "$TEST_HOME/Tests/phpunit.patch"
