@@ -7,4 +7,4 @@ patch_path=$PWD"/"$(dirname $0)"/phpunit.patch"
 pear_path=$(pear config-get php_dir)
 
 cd $pear_path
-patch -p1 < "$patch"
+patch -p1 < "$patch_path"
